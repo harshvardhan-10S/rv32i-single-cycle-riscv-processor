@@ -136,4 +136,31 @@ The PCU provides hardware-level performance monitoring without software overhead
 
 ---
 
+rv32i-single-cycle-riscv-processor/
+│
+├── src/
+│ ├── pc_counter.v
+│ ├── instruction_memory.v
+│ ├── immediate_generator.v
+│ ├── decoder.v
+│ ├── register_file.v
+│ ├── alu.v
+│ ├── alu_control.v
+│ ├── data_memory.v
+│ ├── performance_counter.v
+│ └── riscTop.v
+│
+├── tb/
+│ └── riscTopTB.v
+│
+├── waveforms/
+│ └── simulation.vcd
+│
+├── docs/
+│ ├── architecture.png
+│ ├── block_diagram.png
+│ └── report.pdf
+│
+└── README.md
+
 ## Project Structure
