@@ -136,31 +136,60 @@ The PCU provides hardware-level performance monitoring without software overhead
 
 ---
 
+## Project Structure
+
+```text
 rv32i-single-cycle-riscv-processor/
 │
 ├── src/
-│ ├── pc_counter.v
-│ ├── instruction_memory.v
-│ ├── immediate_generator.v
-│ ├── decoder.v
-│ ├── register_file.v
-│ ├── alu.v
-│ ├── alu_control.v
-│ ├── data_memory.v
-│ ├── performance_counter.v
-│ └── riscTop.v
+│   ├── pc_counter.v
+│   ├── instruction_memory.v
+│   ├── immediate_generator.v
+│   ├── decoder.v
+│   ├── register_file.v
+│   ├── alu.v
+│   ├── alu_control.v
+│   ├── data_memory.v
+│   ├── performance_counter.v
+│   └── riscTop.v
 │
 ├── tb/
-│ └── riscTopTB.v
+│   └── riscTopTB.v
 │
 ├── waveforms/
-│ └── simulation.vcd
+│   └── simulation.vcd
 │
 ├── docs/
-│ ├── architecture.png
-│ ├── block_diagram.png
-│ └── report.pdf
+│   ├── architecture.png
+│   ├── block_diagram.png
+│   └── report.pdf
 │
 └── README.md
+```
 
-## Project Structure
+---
+
+## Simulation
+
+Compile:
+
+```bash
+iverilog -o sim.out src/*.v tb/riscTopTB.v
+vvp sim.out
+gtkwave riscTopTB.vcd
+```
+## Result 
+
+x1 = 5
+x2 = 5
+x3 = 8
+x4 = 2
+x5 = 1
+x6 = 8
+
+## Program Counter:
+
+Final PC = 32
+
+## CPI:
+1.0
